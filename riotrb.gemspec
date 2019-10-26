@@ -1,4 +1,4 @@
-require "lib/riotrb/version"
+require_relative "lib/riotrb/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "riotrb"
