@@ -14,10 +14,14 @@ gem 'riotrb'
 
 ## Getting Started
 
+```ruby
+client = Riotrb::Client.new(api_key, region)
+client.third_party_code.by_summoner(encrypted_summoner_id: "")
+```
 
-## History
 
-View the [changelog](https://github.com/drish/riotrb/blob/master/CHANGELOG.md)
+
+
 
 ## Contributing
 
@@ -34,5 +38,5 @@ To get started with development and testing:
 git clone https://github.com/drish/riotrb.git
 cd riotrb
 bundle install
-rake test
+bundle exec rake test
 ```
