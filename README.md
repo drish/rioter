@@ -16,11 +16,10 @@ gem 'riotrb'
 
 ```ruby
 client = Riotrb::Client.new(api_key, region)
+
+# third party code fetching
 client.third_party_code.by_summoner(encrypted_summoner_id: "")
 ```
-
-
-
 
 
 ## Contributing
