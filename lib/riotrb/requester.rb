@@ -14,7 +14,7 @@ module Riotrb
 
       def make_request(url)
         Typhoeus::Request.new(
-          url + "?api_key=#{@api_key}",
+          url,
           method: :get,
           headers: {
             "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
