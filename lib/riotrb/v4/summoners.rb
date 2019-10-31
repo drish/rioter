@@ -1,12 +1,22 @@
+require "riotrb/requester"
+
 module Riotrb
   module V4
-    module Summoners
+    class Summoners < Riotrb::Requester
 
-      def by_account
+      def initialize(api_key, region)
+        super(api_key, region)
       end
 
-      def by_summoner
-        "sup #{@region}"
+      def by_account
+        "#{self.class.name} by_account #{@region}"
+      end
+
+      def by_name(name:)
+        url = "#{base_url}summoners/by-name/#{name}"
+        req = make_request(url)
+        res = req.run
+        res.body
       end
     end
   end
