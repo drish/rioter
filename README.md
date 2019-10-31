@@ -1,6 +1,6 @@
-# riotrb
+# riotrb (wip)
 
-fully featured Riot Games API V4 wrapper
+Riot Games API ruby gem.
 
 [![Build Status](https://travis-ci.org/drish/riotrb.svg?branch=master)](https://travis-ci.org/drish/riotrb)
 
