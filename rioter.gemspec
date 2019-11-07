@@ -1,14 +1,14 @@
-require_relative "lib/riotrb/version"
+require_relative "lib/rioter/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "riotrb"
-  spec.version       = Riotrb::VERSION
+  spec.name          = "rioter"
+  spec.version       = Rioter::VERSION
 
   spec.authors       = "Derich Pacheco"
   spec.email         = "carlosderich@gmail.com"
 
-  spec.summary       = "riotrb - fully featured Riot Games API v4 wrapper"
-  spec.homepage      = "https://github.com/drish/riotrb"
+  spec.summary       = "rioter - fully featured Riot Games API v4 wrapper"
+  spec.homepage      = "https://github.com/drish/rioter"
   spec.license       = "MIT"
 
   spec.files         = Dir["*.{md,txt}", "{lib,ext}/**/*"]

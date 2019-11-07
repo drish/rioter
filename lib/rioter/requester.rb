@@ -1,4 +1,4 @@
-module Riotrb
+module Rioter
   class Requester
 
     def initialize(api_key, region)

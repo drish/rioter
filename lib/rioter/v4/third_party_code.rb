@@ -1,8 +1,8 @@
-require "riotrb/requester"
+require "rioter/requester"
 
-module Riotrb
+module Rioter
   module V4
-    class ThirdPartyCode < Riotrb::Requester
+    class ThirdPartyCode < Rioter::Requester
 
       def initialize(api_key, region)
         super(api_key, region)

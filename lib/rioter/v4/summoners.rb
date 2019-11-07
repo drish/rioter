@@ -1,8 +1,9 @@
-require "riotrb/requester"
+require "rioter/requester"
+require "rioter/v4/summoner"
 
-module Riotrb
+module Rioter
   module V4
-    class Summoners < Riotrb::Requester
+    class Summoners < Rioter::Requester
 
       def initialize(api_key, region)
         super(api_key, region)
@@ -16,7 +17,7 @@ module Riotrb
         url = "#{base_url}summoners/by-name/#{name}"
         req = make_request(url)
         res = req.run
-        res.body
+        Rioter::V4::Summoner.new(JSON.parse(res.body))
       end
     end
   end

@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "riotrb"
+require "rioter"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
