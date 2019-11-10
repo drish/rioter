@@ -1,5 +1,6 @@
 require "rioter/requester"
 require "rioter/v4/summoner"
+require "json"
 
 module Rioter
   module V4
@@ -14,10 +15,11 @@ module Rioter
       end
 
       def by_name(name:)
-        url = "#{base_url}summoners/by-name/#{name}"
+        url = "#{base_url}summoner/v4/summoners/by-name/#{name}"
         req = make_request(url)
         res = req.run
-        Rioter::V4::Summoner.new(JSON.parse(res.body))
+        parsed = check_response!(res)
+        Rioter::V4::Summoner.new(parsed)
       end
     end
   end

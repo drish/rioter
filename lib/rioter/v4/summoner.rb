@@ -5,7 +5,7 @@ module Rioter
     class Summoner
       attr_accessor :name, :profile_icon_id, :puuid, :summoner_level,
                     :account_id, :revision_date, :id
-  
+
       def initialize(attrs = {})
         @profile_icon_id = attrs["profileIconId"]
         @name = attrs["name"]
@@ -30,6 +30,7 @@ module Rioter
           revision_date: @revision_date
         }
       end
+
     end
   end
 end

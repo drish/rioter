@@ -9,7 +9,7 @@ module Rioter
     private
 
       def base_url
-        "https://#{@region}.api.riotgames.com/lol/summoner/v4/"
+        "https://#{@region}.api.riotgames.com/lol/"
       end
 
       def make_request(url)
@@ -20,9 +20,21 @@ module Rioter
             "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
             "Accept-Language" => "en-US,en;q=0.9,pt;q=0.8",
             "X-Riot-Token" => @api_key.to_s,
-            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36"
+            "User-Agent": "rioter ruby gem"
           }
         )
+      end
+
+      # handling behaviour based on response code
+      def check_response!(response)
+        case response.code
+        when 403
+
+          # TODO: custom errors
+          raise StandardError.new("Riot error: Forbidden.")
+        else
+          JSON.parse(response.body)
+        end
       end
   end
 end
