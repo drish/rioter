@@ -13,20 +13,21 @@ module Rioter
       end
 
       def make_request(url)
-        Typhoeus::Request.new(
+        res = Typhoeus::Request.new(
           url,
           method: :get,
           headers: {
             "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
             "Accept-Language" => "en-US,en;q=0.9,pt;q=0.8",
             "X-Riot-Token" => @api_key.to_s,
-            "User-Agent": "rioter ruby gem"
+            "User-Agent": "https://github.com/drish/rioter"
           }
-        )
+        ).run
+        parse!(res)
       end
 
       # handling behaviour based on response code
-      def check_response!(response)
+      def parse!(response)
         case response.code
         when 403
 

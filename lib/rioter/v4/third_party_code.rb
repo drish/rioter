@@ -14,9 +14,7 @@ module Rioter
 
       def by_summoner(encrypted_summoner_id:)
         url = "#{base_url}third-party-code/by-summoner/#{encrypted_summoner_id}".to_s
-        req = make_request(url)
-        res = req.run
-        res.body
+        make_request(url)
       end
     end
   end

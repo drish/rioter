@@ -16,10 +16,8 @@ module Rioter
 
       def by_name(name:)
         url = "#{base_url}summoner/v4/summoners/by-name/#{name}"
-        req = make_request(url)
-        res = req.run
-        parsed = check_response!(res)
-        Rioter::V4::Summoner.new(parsed)
+        summoner_data = make_request(url)
+        Rioter::V4::Summoner.new(summoner_data)
       end
     end
   end

@@ -11,10 +11,8 @@ module Rioter
 
       def by_summoner(encrypted_summoner_id:)
         url = "#{base_url}league/v4/entries/by-summoner/#{encrypted_summoner_id}"
-        req = make_request(url)
-        res = req.run
-        parsed = check_response!(res)
-        parsed.map {|league_entry| Rioter::V4::LeagueEntry.new(league_entry)}
+        entries = make_request(url)
+        entries.map { |entry| Rioter::V4::LeagueEntry.new(entry) }
       end
     end
   end

@@ -3,8 +3,9 @@ module Rioter
 
     # summoner object
     class Summoner
-      attr_accessor :name, :profile_icon_id, :puuid, :summoner_level,
-                    :account_id, :revision_date, :id
+      attr_accessor :name, :profile_icon_id, :puuid,
+                    :summoner_level, :account_id, :revision_date,
+                    :id
 
       def initialize(attrs = {})
         @profile_icon_id = attrs["profileIconId"]
@@ -14,9 +15,6 @@ module Rioter
         @account_id = attrs["accountId"]
         @id = attrs["id"]
         @revision_date = attrs["revisionDate"]
-        # attrs.each do |k, v|
-        #   instance_variable_set("@#{k.downcase.to_sym}", v)
-        # end
       end
 
       def to_h
