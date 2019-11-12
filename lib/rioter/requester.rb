@@ -12,6 +12,7 @@ module Rioter
         "https://#{@region}.api.riotgames.com/lol/"
       end
 
+      # makes a request and raises in case of Riot API error
       def make_request(url)
         res = Typhoeus::Request.new(
           url,

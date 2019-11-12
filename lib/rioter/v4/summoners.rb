@@ -15,7 +15,8 @@ module Rioter
       end
 
       def by_name(name:)
-        url = "#{base_url}summoner/v4/summoners/by-name/#{name}"
+        encoded = URI.escape(name)
+        url = "#{base_url}summoner/v4/summoners/by-name/#{encoded}"
         summoner_data = make_request(url)
         Rioter::V4::Summoner.new(summoner_data)
       end
