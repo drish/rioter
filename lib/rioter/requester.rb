@@ -30,6 +30,10 @@ module Rioter
       # handling behaviour based on response code
       def parse!(response)
         case response.code
+        when 404
+
+          # TODO: custom errors
+          raise StandardError.new("Riot error: Summoner not found.")
         when 403
 
           # TODO: custom errors
