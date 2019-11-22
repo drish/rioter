@@ -12,6 +12,7 @@ module Rioter
         @match_history_url = attrs["matchHistoryUrl"]
         @platform_id = attrs["platformId"]
         @current_account_id = attrs["currentAccountId"]
+        @current_platform_id = attrs["currentPlatformId"]
         @summoner_id = attrs["summonerId"]
         @account_id = attrs["accountId"]
       end
@@ -23,8 +24,9 @@ module Rioter
           match_history_url: @match_history_url,
           platform_id: @platform_id,
           current_account_id: @current_account_id,
-          id: @id,
-          account_id: @account_id
+          current_platform_id: @current_platform_id,
+          account_id: @account_id,
+          summoner_id: @summoner_id
         }
       end
     end

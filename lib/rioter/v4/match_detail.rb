@@ -22,13 +22,15 @@ module Rioter
     class MatchDetail
 
       # TODO: add rest of attributes
-      attr_accessor :season_id, :queueId, :gameId, :participant_identities,
+      attr_accessor :season_id, :queue_id, :game_id, :participant_identities,
                     :game_version, :platform_id, :game_mode, :map_id
                     :game_type
 
       def initialize(attrs = {})
         @season_id = attrs["seasonId"]
         @queue_id = attrs["queueId"]
+        @game_id = attrs["gameId"]
+        @game_mode = attrs["gameMode"]
 
         # PlayerDto
         @participant_identities = []
@@ -39,6 +41,8 @@ module Rioter
 
       def to_h
         {
+          game_id: @game_id,
+          game_mode: @game_mode,
           season_id: @season_id,
           queue_id: @queue_id,
           participant_identities: @participant_identities
