@@ -28,7 +28,6 @@ module Rioter
           revision_date: @revision_date
         }
       end
-
     end
   end
 end

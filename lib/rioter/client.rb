@@ -1,6 +1,7 @@
 require "rioter/v4/third_party_code"
 require "rioter/v4/summoners"
 require "rioter/v4/leagues"
+require "rioter/v4/matches"
 
 module Rioter
   class Client
@@ -15,6 +16,7 @@ module Rioter
       @summoners = Rioter::V4::Summoners.new(api_key, region)
       @third_party_code = Rioter::V4::ThirdPartyCode.new(api_key, region)
       @leagues = Rioter::V4::Leagues.new(api_key, region)
+      @matches = Rioter::V4::Matches.new(api_key, region)
     end
 
     def blank?(val)

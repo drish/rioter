@@ -31,9 +31,7 @@ module Rioter
       def parse!(response)
         case response.code
         when 404
-
-          # TODO: custom errors
-          raise StandardError.new("Riot error: Summoner not found.")
+          raise Rioter::Errors::SummonerNotFound.new
         when 403
 
           # TODO: custom errors
