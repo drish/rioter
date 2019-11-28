@@ -5,7 +5,7 @@ module Rioter
 
     #match-v4/GET_getMatch - ParticipantIdentityDto
     class ParticipantIdentity
-      attr_accessor :player, :participantId
+      attr_accessor :player, :participant_id
       def initialize(attrs = {})
         @player = PlayerDetail.new(attrs["player"])
         @participant_id = attrs["participantId"]
