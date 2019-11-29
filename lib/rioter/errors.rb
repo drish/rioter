@@ -8,9 +8,10 @@ module Rioter
     end
     class RateLimited < StandardError
       attr_accessor :retry_after
-      def initialize(msg, retry_after)
-        @retry_after = retry_after
-        super
+      def initialize(e)
+        @retry_after = e[:retry_after]
+        @msg = e[:msg]
+        super(@msg)
       end
     end
   end

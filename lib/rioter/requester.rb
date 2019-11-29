@@ -37,7 +37,7 @@ module Rioter
           raise StandardError.new("Riot error: Forbidden.")
         when 429
           retry_after = response.headers["Retry-After"]
-          raise Rioter::Errors::RateLimited.new("Rate limit reached, retry after: #{retry_after}", retry_after)
+          raise Rioter::Errors::RateLimited.new(msg: "Rate limit reached, retry after: #{retry_after}", retry_after: retry_after)
         else
           JSON.parse(response.body)
         end
