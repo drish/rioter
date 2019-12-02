@@ -17,10 +17,13 @@ gem 'rioter'
 ```ruby
 client = Rioter::Client.new(api_key, region)
 
-# third party code fetching
-client.third_party_code.by_summoner(encrypted_summoner_id: "")
-```
+# entries by tier
+entries = client.leagues.by_queue_tier_division(queue: "RANKED_SOLO_5x5", tier: "IRON" , division: "IV", page: 3)
 
+# apex leagues
+grandmaster_entries = client.leagues.by_grandmaster_league(queue: "RANKED_SOLO_5x5")
+challenger_entries = client.leagues.by_challenger_league(queue: "RANKED_SOLO_5x5")
+```
 
 ## Contributing
 
