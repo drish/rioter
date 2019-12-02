@@ -20,7 +20,7 @@ module Rioter
         url = "#{base_url}league/v4/challengerleagues/by-queue/#{queue}"
         entries = make_request(url)
         entries["entries"].map do |entry|
-          Rioter::V4::LeagueEntry.new(entry.merge({ "tier" => "MASTER", "leagueId" => entries["leagueId"] }))
+          Rioter::V4::LeagueEntry.new(entry.merge({ "tier" => "CHALLENGER", "leagueId" => entries["leagueId"] }))
         end
       end
 
@@ -28,7 +28,7 @@ module Rioter
         url = "#{base_url}league/v4/grandmasterleagues/by-queue/#{queue}"
         entries = make_request(url)
         entries["entries"].map do |entry|
-          Rioter::V4::LeagueEntry.new(entry.merge({ "tier" => "MASTER", "leagueId" => entries["leagueId"] }))
+          Rioter::V4::LeagueEntry.new(entry.merge({ "tier" => "GRANDMASTER", "leagueId" => entries["leagueId"] }))
         end
       end
 
