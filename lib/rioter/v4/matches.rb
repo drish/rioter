@@ -26,6 +26,7 @@ module Rioter
           opts.each do |k, v|
            query_string << "endIndex=#{v}" and next if k.eql?(:end_index)
            query_string << "beginIndex=#{v}" and next if k.eql?(:begin_index)
+           query_string << "beginTime=#{v}" and next if k.eql?(:begin_time)
            query_string << "#{k}=#{v}"
           end
           url = url + query_string.join("&")
